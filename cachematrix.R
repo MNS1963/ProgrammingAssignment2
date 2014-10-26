@@ -8,15 +8,16 @@
 ## If yes, get anser from cache(memory).  If no call function cacheSolve.
 
 makeCacheMatrix <- function(x = matrix()) {
-        If(!isNull) {
-                ## return value of M from cache
-                return(m)
-        }
+         m <<- matrix(nrow = 3, ncol = 3)
 }
 
 
 ## The cacheSolve function calculates the inverse of a matrix using the R solve function.
 
 cacheSolve <- function(x, ...) {
-        solve(m)  ## Return a matrix that is the inverse of 'x'
+        if(!is.null(m)) {
+                message("getting cached data")
+                return(m)
+        }
+        m <- solve(x)  ## Return a matrix that is the inverse of 'x'
 }
